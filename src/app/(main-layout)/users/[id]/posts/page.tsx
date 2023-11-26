@@ -1,12 +1,21 @@
-import {userService} from "@/services/userService";
-import Users from "@/app/(main-layout)/users/components/Users";
+import {FC, PropsWithChildren} from "react";
+import {postsService} from "@/services/postsService";
+import {Posts} from "@/app/(main-layout)/users/[id]/posts/components/Posts";
+import {Metadata} from "next";
+export const metadata: Metadata = {
+    title: 'Posts',
+}
 
-const Page = async () => {
+interface IProps{
+    params: {id:string}
+}
+const Page:FC<IProps> = async  ({params:{id}}) => {
 
-    const {data} = await userService.getAll();
+    const {data} = await postsService.getByUserId(id);
+
     return (
         <div>
-            <Users users={data}/>
+            <Posts posts={data}/>
         </div>
     );
 };

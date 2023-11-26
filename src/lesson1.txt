@@ -1,0 +1,9 @@
+Next.js is a React framework that simplifies the process of building React applications.
+Supports server-side rendering: when a user requests a page, the server generates the HTML content on the server side and sends it to the client.
+
+Folders in app folder are used to define routes. -> Files are used to create UI.
+To create a nested route, you can nest folders inside each other.
+
+redirects() func - allows to redirect an incoming request path to a different destination path
+
+(main-layout) - urls will not directly include "main-layout" in their paths
