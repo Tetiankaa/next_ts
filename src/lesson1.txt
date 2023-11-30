@@ -7,3 +7,5 @@ To create a nested route, you can nest folders inside each other.
 redirects() func - allows to redirect an incoming request path to a different destination path
 
 (main-layout) - urls will not directly include "main-layout" in their paths
+
+npm run dev - will start the development server
