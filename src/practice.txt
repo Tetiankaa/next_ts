@@ -1,0 +1,16 @@
+Cache option values:
+    - 'default': The default behavior of the browser, which might include using a cached response.
+    - 'no-store': Forces a new request and prevents the browser from caching the response.
+    - 'reload': Forces a new request, but the browser may still check for updates in the cache before making the network request.
+    - 'no-cache': Requests a new response from the server but allows the server to determine whether the cached version can be used after validation.
+    - 'force-cache': Forces the browser to use a cached version without checking for updates.
+
+Suspense is used to wrap the component that may have asynchronous content.
+ It allows to specify a fallback UI to be displayed while the asynchronous operation is in progress.
+
+ "static site generation" (SSG) - framework pre-generates HTML pages at build time based on the data available, resulting in faster page loads and improved SEO.
+ When a user clicks on a particular information, the application doesn't need to make a new server request.
+
+ Server-Side Rendering (SSR) - when a user requests a page, the server generates the HTML content on the server side and sends it to the client.
+
+useRouter - allows programmatically navigate between pages and react to changes in the route.
