@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={'bg-slate-800'} >
+    <html lang="en" className={"dark"}>
+      <body className={'dark:bg-slate-800'} >
       <NavBar/>
       <MyProfilePic/>
       {children}</body>

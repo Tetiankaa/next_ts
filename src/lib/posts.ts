@@ -1,12 +1,13 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-// import { remark } from 'remark'
-// import html from 'remark-html'
+import { remark } from 'remark'
+import html from 'remark-html'
 
 import {IBlogPost} from "@/interfaces/BlogPostInterface";
 
-const postsDirectory = path.join(process.cwd(), 'blogposts')
+
+const postsDirectory = path.join(process.cwd(),'src', 'blogposts')
 
 export function getSortedPostsData() {
     // Get file names under /posts
