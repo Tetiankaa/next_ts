@@ -1,6 +1,8 @@
 import React from "react";
 import Posts from "@/app/components/Posts";
 
+export const revalidate = 10;
+
 const Home = () => {
 
     return (

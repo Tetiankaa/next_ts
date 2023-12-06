@@ -2,3 +2,8 @@ Next.js has two forms of pre-rendering: Static Generation and Server-side Render
 
 Static Generation is the pre-rendering method that generates the HTML at build time. The pre-rendered HTML is then reused on each request.
 Server-side Rendering is the pre-rendering method that generates the HTML on each request.
+
+Revalidation useful when data changes and you want to ensure you show the latest information.
+    Cached data can be revalidated in two ways:
+            1. Time-based revalidation: Automatically revalidate data after a certain amount of time has passed.
+            2. On-demand revalidation: Manually revalidate data based on an event
