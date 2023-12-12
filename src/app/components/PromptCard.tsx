@@ -7,6 +7,7 @@ import tick from '../../../public/assets/icons/tick.svg';
 import copy from '../../../public/assets/icons/copy.svg';
 import {Post} from "@/app/create-prompt/page";
 import {usePathname, useRouter} from "next/navigation";
+import {router} from "next/client";
 
 type Props = {
     post:Post,
@@ -26,14 +27,21 @@ const PromptCard = ({handleTagClick,post, handleEdit, handleDelete}:Props) => {
        navigator.clipboard.writeText(post.prompt);
        setTimeout(()=>setCopied(""),3000)
    }
+
+   const handleProfileClick = ()=>{
+       if (post.creator._id === session?.user.id) return router.push('/profile');
+
+       router.push(`/profile/${post.creator._id}?name=${post.creator.username}`)
+   }
     return (
         <div className={'prompt_card'}>
             <div className={'flex justify-between items-start gap-5'}>
-                <div className={'flex-1 flex justify-start items-center gap-3 cursor-pointer'}>
+
+                <div className={'flex-1 flex justify-start items-center gap-3 cursor-pointer'} onClick={handleProfileClick}>
                     <Image src={session?.user?.image} alt={'user_image'} width={40} height={40} className={'rounded-full object-contain'}/>
                     <div className={'flex flex-col items-start'}>
-                        <h3 className={'font-serif font-semibold text-gray-900'}>{post.creator.username}</h3>
-                        <p className={'font-serif text-sm text-gray-500'}>{session?.user.email}</p>
+                        <h3 className={'font-serif font-semibold text-gray-900'} >{post.creator.username}</h3>
+                        <p className={'font-serif text-sm text-gray-500'}>{post.creator.email}</p>
                     </div>
                 </div>
 

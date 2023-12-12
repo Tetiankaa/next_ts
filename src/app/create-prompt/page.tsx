@@ -14,7 +14,8 @@ export type Post = {
     userId?:Schema.Types.ObjectId,
     creator?:{
         _id:string,
-        username?:string
+        username?:string,
+        email:string
     },
     _id?:string
 }
