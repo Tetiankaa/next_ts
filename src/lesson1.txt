@@ -29,4 +29,8 @@ This is useful when you want to create dynamic routes that can handle varying nu
 
 Layout: is like a blueprint that helps make all the pages of the website look the same. It's a way to put common things, header, footer that appears on every page in one place.
 
+Middleware(s): are functions that run in between a users request to a web page and the server's response.
+They help process and modify the request or response, adding extra functionality to web application.
+
+
 
