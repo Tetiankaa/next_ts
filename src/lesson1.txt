@@ -1,11 +1,32 @@
-Next.js is a React framework that simplifies the process of building React applications.
-Supports server-side rendering: when a user requests a page, the server generates the HTML content on the server side and sends it to the client.
+Next.js is a framework that simplifies the process of building React applications.
+Supports server-side rendering(SSR): when a user requests a page, the server generates the HTML content on the server side and sends it to the client.
+Static site generation(SSG): allows pre-render pages at build time
+
+API routes: allows to create serverless API endpoints within next project, making it easy to handle backend logic
+
+Routing: is like giving directions to a website.When you type a URL into browser, routing tells the website which page to show.
 
 Folders in app folder are used to define routes. -> Files are used to create UI.
 To create a nested route, you can nest folders inside each other.
 
 redirects() func - allows to redirect an incoming request path to a different destination path
 
-(main-layout) - urls will not directly include "main-layout" in their paths
+(main-layout) - urls will not directly include "main-layout" in url path
 
 npm run dev - will start the development server
+
+-----------------------------------------------
+
+Link: is a component that allows to navigate between pages in application.
+It prevents the default browser full-page refresh and fetches the new page content on the client side,resulting in a faster and smoother user experience.
+
+useRouter: is a hook that allows to access the router object and its properties, also allows to navigate to different pages.
+
+Dynamic routes: refer to a feature that allows to create web pages with variable or dynamic parts in the URL.
+
+Catch_All Routes[...folderName]: allows to capture multiple URL segments and treat them as a dynamic array of values.
+This is useful when you want to create dynamic routes that can handle varying numbers of URL segments.
+
+Layout: is like a blueprint that helps make all the pages of the website look the same. It's a way to put common things, header, footer that appears on every page in one place.
+
+
