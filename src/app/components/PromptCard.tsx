@@ -7,7 +7,6 @@ import tick from '../../../public/assets/icons/tick.svg';
 import copy from '../../../public/assets/icons/copy.svg';
 import {Post} from "@/app/create-prompt/page";
 import {usePathname, useRouter} from "next/navigation";
-import {router} from "next/client";
 
 type Props = {
     post:Post,
@@ -20,6 +19,8 @@ const PromptCard = ({handleTagClick,post, handleEdit, handleDelete}:Props) => {
     const {data:session} = useSession();
     const pathName = usePathname();
 
+    const router = useRouter();
+
     const [copied, setCopied] = useState<string>("");
 
    const handleCopy = ()=>{
@@ -29,9 +30,12 @@ const PromptCard = ({handleTagClick,post, handleEdit, handleDelete}:Props) => {
    }
 
    const handleProfileClick = ()=>{
-       if (post.creator._id === session?.user.id) return router.push('/profile');
 
-       router.push(`/profile/${post.creator._id}?name=${post.creator.username}`)
+       if (post.creator._id === session.user.id){
+           return router.push('/profile')
+       }else {
+           router.push(`/profile/${post.creator._id}?name=${post.creator.username}`)
+       }
    }
     return (
         <div className={'prompt_card'}>
