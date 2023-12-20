@@ -4,6 +4,7 @@ import './globals.css'
 import AuthProvider from "@/app/utils/AuthProvider";
 import NavBar from "@/app/components/NavBar";
 import ReactToast from "@/app/components/ReactToast";
+import {ThemeProvider} from "@material-tailwind/react";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,11 +23,11 @@ export default function RootLayout({
 
       <body className={inter.className}>
 
-          <AuthProvider>
-              <NavBar/>
-              {children}
-              <ReactToast/>
-          </AuthProvider>
+      <ThemeProvider><AuthProvider>
+          <NavBar/>
+          {children}
+          <ReactToast/>
+      </AuthProvider></ThemeProvider>
       </body>
 
     </html>

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.w400{
-    width: 400px;
-}
+/*.formCss{*/
+/*    min-height: 100vh;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background-color: lightblue;*/
+/*}*/
